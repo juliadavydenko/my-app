@@ -1,13 +1,28 @@
 // creating the component that will store all info, container of all the steps
 
-import React from "react";
+import React, { useState } from "react";
 
 function Form() {
+  // determing which step we are in by useState
+  // creating state by name page(=step), setPage - to mutate this variable
+  // 0 is starting from the 1st step
+  const [page, setPage] = useState(0);
+  // keep track of the titles of the steps by having an array
+  const FormTitles = [
+    "Personal Info",
+    "Select Your Plan",
+    "Pick Add-ons",
+    "Finishing Up",
+  ];
+  // display title depending on which page we are in, I put it inside  Header
+
   return (
     <div className="form">
       <div className="progressbar"></div>
       <div className="form-container"></div>
-      <div className="header"></div>
+      <div className="header">
+        <h1>{FormTitles[page]}</h1>
+      </div>
       <div className="body"></div>
       <div className="footer">
         <button>Go Back</button>
