@@ -25,7 +25,14 @@ function Form() {
       </div>
       <div className="body"></div>
       <div className="footer">
-        <button>Go Back</button>
+        <button
+          disabled={page == 0}
+          onClick={() => {
+            setPage((currPage) => currPage - 1);
+          }}
+        >
+          Go Back
+        </button>
         {/* change the p.state to be equal 
         to what was before plus one, moving forward to the right */}
         <button
