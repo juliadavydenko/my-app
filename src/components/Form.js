@@ -39,6 +39,15 @@ function Form() {
         <h1>{FormTitles[page]}</h1>
       </div>
       <div className="body">{PageDisplay()}</div>
+
+      <div class="chat-notification">
+        <div class="chat-notification-logo-wrapper"></div>
+        <div class="chat-notification-content">
+          <h4 class="chat-notification-title">ChitChat</h4>
+          <p class="chat-notification-message">You have a new message!</p>
+        </div>
+      </div>
+
       <div className="footer">
         {/* for the Prev button it's same as Next button, but
 instead of + I put - and disabled when it's on 0(starting page) */}
