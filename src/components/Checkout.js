@@ -15,7 +15,7 @@ import PersonalInfo from "./PersonalInfo";
 import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
 import Summary from "./Summary";
-import "./index.css";
+import "../index.css";
 
 function Copyright() {
   return (

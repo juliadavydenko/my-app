@@ -4,62 +4,59 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { styled, Paper } from "@mui/material";
 
 export default function SelectPlan() {
+  const boldStyles = {
+    textAlign: "center",
+    fontWeight: 700,
+    fontFamily: "Ubuntu, sans-serif",
+  };
+  const mediumStyles = {
+    textAlign: "center",
+    fontWeight: 500,
+    fontFamily: "Ubuntu, sans-serif",
+  };
+  const normalStyles = {
+    textAlign: "center",
+    fontWeight: 400,
+    fontFamily: "Ubuntu, sans-serif",
+  };
+  const CardWrapper = styled(Paper)(({ theme }) => ({
+    padding: theme.spacing(3),
+    textAlign: "center",
+    cursor: "pointer",
+    transition: "transform 0.2s ease",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  }));
+
+  const CardComponent = ({ title }) => {
+    return (
+      <CardWrapper elevation={3}>
+        <Typography variant="h5" color="rgb(2,30,78)">
+          {title}
+        </Typography>
+        <Typography variant="body1">9$/mo {title}</Typography>
+      </CardWrapper>
+    );
+  };
+
   return (
-    <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Payment method
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardName"
-            label="Name on card"
-            fullWidth
-            autoComplete="cc-name"
-            variant="standard"
-          />
+    <div>
+      {/* ... (rest of the code) */}
+      <Grid container spacing={2}>
+        <Grid item xs={4}>
+          <CardComponent title="Arcade" />
         </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardNumber"
-            label="Card number"
-            fullWidth
-            autoComplete="cc-number"
-            variant="standard"
-          />
+        <Grid item xs={4}>
+          <CardComponent title="Advance" />
         </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="expDate"
-            label="Expiry date"
-            fullWidth
-            autoComplete="cc-exp"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
-            fullWidth
-            autoComplete="cc-csc"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveCard" value="yes" />}
-            label="Remember credit card details for next time"
-          />
+        <Grid item xs={4}>
+          <CardComponent title="Pro" />
         </Grid>
       </Grid>
-    </React.Fragment>
+    </div>
   );
 }

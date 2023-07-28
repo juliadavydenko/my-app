@@ -2,6 +2,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import "../index.css";
 
 export default function PersonalInfo() {
   const boldStyles = {
@@ -53,6 +54,7 @@ export default function PersonalInfo() {
         </Grid>
         <Grid item xs={12}>
           <TextField
+            required
             id="phonenumber"
             name="phonenumber"
             label="e.g. +1 234 567 890"
