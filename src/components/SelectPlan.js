@@ -4,7 +4,9 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { styled, Paper } from "@mui/material";
+import { styled, Paper, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import Toggle from "./Toggle";
+import ArcadeIcon from "./ArcadeIcon";
 
 export default function SelectPlan() {
   const boldStyles = {
@@ -33,8 +35,14 @@ export default function SelectPlan() {
   }));
 
   const CardComponent = ({ title }) => {
+    const boldStyles = {
+      textAlign: "center",
+      fontWeight: 700,
+      fontFamily: "Ubuntu, sans-serif",
+    };
     return (
       <CardWrapper elevation={3}>
+        <ArcadeIcon width="40" height="40" />
         <Typography variant="h5" color="rgb(2,30,78)">
           {title}
         </Typography>
@@ -43,8 +51,16 @@ export default function SelectPlan() {
     );
   };
 
+  const [subscriptionPeriod, setSubscriptionPeriod] = React.useState("monthly");
+
   return (
     <div>
+      <Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
+        Select your plan
+      </Typography>
+      <Typography variant="body1" color="hsl(231, 11%, 63%)">
+        You have the option of monthly or yearly billing.
+      </Typography>
       {/* ... (rest of the code) */}
       <Grid container spacing={2}>
         <Grid item xs={4}>
@@ -57,6 +73,10 @@ export default function SelectPlan() {
           <CardComponent title="Pro" />
         </Grid>
       </Grid>
+      <Toggle
+        subscriptionPeriod={subscriptionPeriod}
+        setSubscriptionPeriod={setSubscriptionPeriod}
+      />
     </div>
   );
 }

@@ -1,88 +1,46 @@
-import * as React from "react";
+import React from "react";
+import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material";
 
-const products = [
-  {
-    name: "Product 1",
-    desc: "A nice thing",
-    price: "$9.99",
-  },
-  {
-    name: "Product 2",
-    desc: "Another thing",
-    price: "$3.45",
-  },
-  {
-    name: "Product 3",
-    desc: "Something else",
-    price: "$6.51",
-  },
-  {
-    name: "Product 4",
-    desc: "Best thing of all",
-    price: "$14.11",
-  },
-  { name: "Shipping", desc: "", price: "Free" },
-];
+const AddOnsRoot = styled(Paper)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: theme.spacing(3),
+  borderRadius: theme.spacing(2),
+  boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
+}));
 
-const addresses = ["1 MUI Drive", "Reactville", "Anytown", "99999", "USA"];
-const payments = [
-  { name: "Card type", detail: "Visa" },
-  { name: "Card holder", detail: "Mr John Smith" },
-  { name: "Card number", detail: "xxxx-xxxx-xxxx-1234" },
-  { name: "Expiry date", detail: "04/2024" },
-];
-
-export default function AddOns() {
+const AddOns = ({ plan, price, features, buttonText }) => {
+  const boldStyles = {
+    textAlign: "center",
+    fontWeight: 700,
+    fontFamily: "Ubuntu, sans-serif",
+  };
   return (
-    <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Order summary
+    <AddOnsRoot>
+      <Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
+        Pick add-ons
       </Typography>
-      <List disablePadding>
-        {products.map((product) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
-          </ListItem>
-        ))}
-        <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
-          </Typography>
-        </ListItem>
-      </List>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(", ")}</Typography>
-        </Grid>
-        <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Select plan
-          </Typography>
-          <Grid container>
-            {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
-                </Grid>
-              </React.Fragment>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
-    </React.Fragment>
+      <Typography variant="body1" color="hsl(231, 11%, 63%)">
+        Add-ons help enhance your gaming experience.
+      </Typography>
+      <Typography variant="h5" component="h2" gutterBottom>
+        {plan}
+      </Typography>
+      <Typography variant="h3" component="h3" gutterBottom>
+        ${price}
+      </Typography>
+      <Typography variant="body2" color="text.secondary" gutterBottom>
+        {features}
+      </Typography>
+      <Button variant="contained" color="primary">
+        {buttonText}
+      </Button>
+    </AddOnsRoot>
   );
-}
+};
+
+export default AddOns;

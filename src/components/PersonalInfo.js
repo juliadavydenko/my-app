@@ -22,10 +22,10 @@ export default function PersonalInfo() {
   };
   return (
     <React.Fragment>
-      <Typography sx={boldStyles} variant="h3">
+      <Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
         Personal Info
       </Typography>
-      <Typography sx={normalStyles}>
+      <Typography variant="body1" color="hsl(231, 11%, 63%)">
         Please provide your name, email address and phone number.
       </Typography>
 

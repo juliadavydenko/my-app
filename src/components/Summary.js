@@ -6,10 +6,18 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 export default function Summary() {
+  const boldStyles = {
+    textAlign: "center",
+    fontWeight: 700,
+    fontFamily: "Ubuntu, sans-serif",
+  };
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Payment method
+      <Typography Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
+        Finishing up
+      </Typography>
+      <Typography variant="body1" color="hsl(231, 11%, 63%)">
+        Double-check everything looks OK before confirming.
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
