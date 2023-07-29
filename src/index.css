@@ -1,24 +1,13 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+input::placeholder {
+  font-family: 'Ubuntu', sans-serif; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+input:-ms-input-placeholder {
+  font-family: 'Ubuntu', sans-serif;
+}
 
-/* 
-instead of creating a new file styles.css in src 
-I will change this one to play around and comment output
-what was here before  It's gonna be above*/
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+input::-ms-input-placeholder {
+  font-family: 'Ubuntu', sans-serif;
+}
