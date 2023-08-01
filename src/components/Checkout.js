@@ -15,6 +15,7 @@ import PersonalInfo from "./PersonalInfo";
 import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
 import Summary from "./Summary";
+import { FormEvent } from "react";
 import "../index.css";
 
 function Copyright() {
@@ -63,6 +64,10 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+  function onSubmit(e: FormEvent) {
+    e.preventDefault();
+    handleNext();
+  }
   return (
     <React.Fragment>
       <CssBaseline />
@@ -82,54 +87,57 @@ export default function Checkout() {
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-        <Paper
-          variant="outlined"
-          sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
-        >
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment>
-              <Typography variant="h5" gutterBottom>
-                Thank you for your order.
-              </Typography>
-              <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
-              </Typography>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              {getStepContent(activeStep)}
-              <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                {activeStep !== 0 && (
+        <form>
+          {" "}
+          <Paper
+            variant="outlined"
+            sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+          >
+            <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+              {steps.map((label) => (
+                <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment>
+                <Typography variant="h5" gutterBottom>
+                  Thank you for your order.
+                </Typography>
+                <Typography variant="subtitle1">
+                  Your order number is #2001539. We have emailed your order
+                  confirmation, and will send you an update when your order has
+                  shipped.
+                </Typography>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {getStepContent(activeStep)}
+                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                  {activeStep !== 0 && (
+                    <Button
+                      onClick={handleBack}
+                      sx={{ mt: 3, ml: 1, textTransform: "capitalize" }}
+                    >
+                      Go Back
+                    </Button>
+                  )}
+
                   <Button
-                    onClick={handleBack}
+                    variant="contained"
+                    onClick={handleNext}
                     sx={{ mt: 3, ml: 1, textTransform: "capitalize" }}
                   >
-                    Go Back
+                    {activeStep === steps.length - 1
+                      ? "Place order"
+                      : "Next Step"}
                   </Button>
-                )}
-
-                <Button
-                  variant="contained"
-                  onClick={handleNext}
-                  sx={{ mt: 3, ml: 1, textTransform: "capitalize" }}
-                >
-                  {activeStep === steps.length - 1
-                    ? "Place order"
-                    : "Next Step"}
-                </Button>
-              </Box>
-            </React.Fragment>
-          )}
-        </Paper>
+                </Box>
+              </React.Fragment>
+            )}
+          </Paper>
+        </form>
         <Copyright />
       </Container>
     </React.Fragment>
