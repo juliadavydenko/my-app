@@ -42,18 +42,21 @@ export default function SelectPlan() {
           <CardComponent
             img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-arcade.svg"
             title="Arcade"
+            price="$9/mo"
           />
         </Grid>
         <Grid item xs={4}>
           <CardComponent
             img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-advanced.svg"
             title="Advanced"
+            price="$12/mo"
           />
         </Grid>
         <Grid item xs={4}>
           <CardComponent
             img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-pro.svg"
             title="Pro"
+            price="$15/mo"
           />
         </Grid>
       </Grid>
