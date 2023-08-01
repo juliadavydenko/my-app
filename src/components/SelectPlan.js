@@ -6,7 +6,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { styled, Paper, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Toggle from "./Toggle";
-import ArcadeIcon from "./ArcadeIcon";
+import PlanIcon from "./PlanIcon";
+import CardComponent from "./CardComponent";
 
 export default function SelectPlan() {
   const boldStyles = {
@@ -24,32 +25,6 @@ export default function SelectPlan() {
     fontWeight: 400,
     fontFamily: "Ubuntu, sans-serif",
   };
-  const CardWrapper = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(3),
-    textAlign: "center",
-    cursor: "pointer",
-    transition: "transform 0.2s ease",
-    "&:hover": {
-      transform: "scale(1.05)",
-    },
-  }));
-
-  const CardComponent = ({ title }) => {
-    const boldStyles = {
-      textAlign: "center",
-      fontWeight: 700,
-      fontFamily: "Ubuntu, sans-serif",
-    };
-    return (
-      <CardWrapper elevation={3}>
-        <ArcadeIcon width="40" height="40" />
-        <Typography variant="h5" color="rgb(2,30,78)">
-          {title}
-        </Typography>
-        <Typography variant="body1">9$/mo {title}</Typography>
-      </CardWrapper>
-    );
-  };
 
   const [subscriptionPeriod, setSubscriptionPeriod] = React.useState("monthly");
 
@@ -58,19 +33,31 @@ export default function SelectPlan() {
       <Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
         Select your plan
       </Typography>
-      <Typography variant="body1" color="hsl(231, 11%, 63%)">
+      <Typography variant="body1" color="hsl(231, 11%, 63%)" align="center">
         You have the option of monthly or yearly billing.
       </Typography>
       {/* ... (rest of the code) */}
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <CardComponent title="Arcade" />
+          <CardComponent
+            img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-arcade.svg"
+            title="Arcade"
+            price="$9/mo"
+          />
         </Grid>
         <Grid item xs={4}>
-          <CardComponent title="Advance" />
+          <CardComponent
+            img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-advanced.svg"
+            title="Advanced"
+            price="$12/mo"
+          />
         </Grid>
         <Grid item xs={4}>
-          <CardComponent title="Pro" />
+          <CardComponent
+            img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-pro.svg"
+            title="Pro"
+            price="$15/mo"
+          />
         </Grid>
       </Grid>
       <Toggle
