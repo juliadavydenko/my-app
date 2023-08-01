@@ -20,6 +20,7 @@ export default function PersonalInfo() {
     fontWeight: 400,
     fontFamily: "Ubuntu, sans-serif",
   };
+
   return (
     <React.Fragment>
       <Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
@@ -28,7 +29,6 @@ export default function PersonalInfo() {
       <Typography variant="body1" color="hsl(231, 11%, 63%)">
         Please provide your name, email address and phone number.
       </Typography>
-
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <TextField
