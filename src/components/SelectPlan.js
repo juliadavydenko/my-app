@@ -7,6 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { styled, Paper, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Toggle from "./Toggle";
 import PlanIcon from "./PlanIcon";
+import CardComponent from "./CardComponent";
 
 export default function SelectPlan() {
   const boldStyles = {
@@ -24,32 +25,6 @@ export default function SelectPlan() {
     fontWeight: 400,
     fontFamily: "Ubuntu, sans-serif",
   };
-  const CardWrapper = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(3),
-    textAlign: "center",
-    cursor: "pointer",
-    transition: "transform 0.2s ease",
-    "&:hover": {
-      transform: "scale(1.05)",
-    },
-  }));
-
-  const CardComponent = ({ title }) => {
-    const boldStyles = {
-      textAlign: "center",
-      fontWeight: 700,
-      fontFamily: "Ubuntu, sans-serif",
-    };
-    return (
-      <CardWrapper elevation={3}>
-        <PlanIcon width="40" height="40" />
-        <Typography variant="h5" color="rgb(2,30,78)">
-          {title}
-        </Typography>
-        <Typography variant="body1">9$/mo {title}</Typography>
-      </CardWrapper>
-    );
-  };
 
   const [subscriptionPeriod, setSubscriptionPeriod] = React.useState("monthly");
 
@@ -64,13 +39,22 @@ export default function SelectPlan() {
       {/* ... (rest of the code) */}
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <CardComponent title="Arcade" />
+          <CardComponent
+            img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-arcade.svg"
+            title="Arcade"
+          />
         </Grid>
         <Grid item xs={4}>
-          <CardComponent title="Advance" />
+          <CardComponent
+            img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-advanced.svg"
+            title="Advanced"
+          />
         </Grid>
         <Grid item xs={4}>
-          <CardComponent title="Pro" />
+          <CardComponent
+            img="https://raw.githubusercontent.com/juliadavydenko/multistep-form-react-Frontend-Mentor-Challenge-/2862aa60ba7802591f315203fe2ae6e8187040f9/src/icons/icon-pro.svg"
+            title="Pro"
+          />
         </Grid>
       </Grid>
       <Toggle
