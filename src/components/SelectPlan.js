@@ -33,7 +33,7 @@ export default function SelectPlan() {
       <Typography sx={boldStyles} variant="h4" color="rgb(2,30,78)">
         Select your plan
       </Typography>
-      <Typography variant="body1" color="hsl(231, 11%, 63%)">
+      <Typography variant="body1" color="hsl(231, 11%, 63%)" align="center">
         You have the option of monthly or yearly billing.
       </Typography>
       {/* ... (rest of the code) */}
