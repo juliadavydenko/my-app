@@ -6,7 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { styled, Paper, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Toggle from "./Toggle";
-import ArcadeIcon from "./ArcadeIcon";
+import PlanIcon from "./PlanIcon";
 
 export default function SelectPlan() {
   const boldStyles = {
@@ -42,7 +42,7 @@ export default function SelectPlan() {
     };
     return (
       <CardWrapper elevation={3}>
-        <ArcadeIcon width="40" height="40" />
+        <PlanIcon width="40" height="40" />
         <Typography variant="h5" color="rgb(2,30,78)">
           {title}
         </Typography>
