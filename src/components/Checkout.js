@@ -16,6 +16,9 @@ import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
 import Summary from "./Summary";
 import { FormEvent } from "react";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+
 import "../index.css";
 
 function Copyright() {
@@ -64,10 +67,10 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    handleNext();
-  }
+  // function onSubmit(e: FormEvent) {
+  //   e.preventDefault();
+  //   handleNext();
+  // }
   return (
     <React.Fragment>
       <CssBaseline />
@@ -87,8 +90,20 @@ export default function Checkout() {
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-        <form>
+        <Box sx={{ display: "flex" }}>
           {" "}
+          {/* <form sx={{ width: "70%" }}> */}
+          <CardMedia
+            component="img"
+            sx={{
+              width: 151,
+              height: 525,
+              paddingTop: 3,
+              borderRadius: ".10rem",
+            }}
+            image={require("../icons/bg-sidebar-desktop.svg").default}
+            alt="Sidebar image"
+          />
           <Paper
             variant="outlined"
             sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
@@ -100,6 +115,7 @@ export default function Checkout() {
                 </Step>
               ))}
             </Stepper>
+
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
@@ -137,7 +153,9 @@ export default function Checkout() {
               </React.Fragment>
             )}
           </Paper>
-        </form>
+          {/* </form> */}
+        </Box>
+
         <Copyright />
       </Container>
     </React.Fragment>
