@@ -16,8 +16,7 @@ import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
 import Summary from "./Summary";
 import { FormEvent } from "react";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
+import Sidebar from "./Sidebar";
 
 import "../index.css";
 
@@ -93,7 +92,7 @@ export default function Checkout() {
         <Box sx={{ display: "flex" }}>
           {" "}
           {/* <form sx={{ width: "70%" }}> */}
-          <CardMedia
+          {/* <CardMedia
             component="img"
             sx={{
               width: 151,
@@ -103,11 +102,12 @@ export default function Checkout() {
             }}
             image={require("../icons/bg-sidebar-desktop.svg").default}
             alt="Sidebar image"
-          />
+          /> */}
           <Paper
             variant="outlined"
             sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
           >
+            <Sidebar />
             <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
               {steps.map((label) => (
                 <Step key={label}>
