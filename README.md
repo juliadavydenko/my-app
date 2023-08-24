@@ -4,9 +4,7 @@
 
 This is a front-end coding challenge.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
-
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+[Frontend Mentor](https://www.frontendmentor.io) challenges help to improve coding skills by building realistic projects.
 
 ## The challenge is to build out this multi-step form and get it looking as close to the design as possible.
 
