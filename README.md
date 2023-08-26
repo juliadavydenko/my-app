@@ -8,9 +8,9 @@ This is a front-end coding challenge.
 
 ## The challenge is to build out this multi-step form and get it looking as close to the design as possible.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-Your users should be able to:
+
+Users are able to:
 
 - Complete each step of the sequence
 - Go back to a previous step to update their selections
@@ -40,7 +40,7 @@ There is also a `style-guide.md` file containing the information you'll need, su
 
 ## Building your project
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+Below is a suggested process, but do not feel like you need to follow these steps:
 
 1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
 2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
